@@ -18,5 +18,5 @@ RUN poetry install
 EXPOSE 8501
 
 # Entrypoint é o que queremos escrever no terminal
-ENTRYPOINT [ "poetry", "run", "streamlit", "run", "app.py"]
+ENTRYPOINT [ "poetry", "run", "streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
