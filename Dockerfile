@@ -11,8 +11,9 @@ COPY . /src
 # Diretório de trabalho
 WORKDIR /src
 
-# Como estamos utilizando o poetry, temos que rodar o poetry install
-RUN poetry install
+# Como estamos utilizando o poetry, temos que rodar o poetry install para instalar o que está no arquivo pyproject.toml
+# Foi necessário incluir o --no--root para não dar erro
+RUN poetry install --no-root
 
 # Como estamos rodando um app com streamlit, precisamos indicar para deixar a porta do streamlit aberta
 EXPOSE 8501
